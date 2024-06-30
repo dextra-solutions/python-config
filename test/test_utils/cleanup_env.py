@@ -1,6 +1,10 @@
 import os
 
-prefix = 'python_config.'
+import pytest
+
+from python_yaml_config.app_config import PYTHON_CONFIG_ENV_PREFIX
+
+prefix = PYTHON_CONFIG_ENV_PREFIX
 
 
 def cleanup_env():

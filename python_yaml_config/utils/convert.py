@@ -9,5 +9,5 @@ def try_convert_string(string):
             return False
         else:
             return ast.literal_eval(string)
-    except Exception as e:
+    except Exception:
         return string

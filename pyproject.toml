@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-config"
+name = "python-yaml-config"
 version = "0.1.0"
 description = "Spring-like python app configuration utility"
 authors = ["Roland Molnar <roland@dextra.dev>"]
@@ -9,9 +9,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "~3.12"
 pyyaml = "^6.0.1"
-pytest = "^8.2.2"
 python-box = "^7.2.0"
 
+[tool.poetry.dev-dependencies]
+pytest = "^8.2.2"
 
 [build-system]
 requires = ["poetry-core"]

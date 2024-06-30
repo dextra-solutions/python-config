@@ -1,0 +1,17 @@
+simple_string: simpleString
+simple_number: 123
+simple_bool_lower: true
+simple_bool_upper: True
+simple_bool_false: false
+
+nested:
+  value: nestedValue
+
+such:
+  much:
+    nested:
+      value: suchMuchNestedValue
+
+i:
+  am:
+    immutable: immutable

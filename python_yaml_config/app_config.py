@@ -5,7 +5,7 @@ from box import Box
 
 from python_yaml_config.utils.convert import try_convert_string
 
-PYTHON_CONFIG_ENV_PREFIX: str = 'python_yaml_config.'
+PYTHON_CONFIG_ENV_PREFIX: str = 'python_yaml_config_'
 
 
 def get_config_from_file_and_env(config_file: str) -> Box:
@@ -33,7 +33,7 @@ def __override_with_env_variables(config: Box) -> Box:
     Returns:
         Box: The configuration as a Box object, with overrides from environment variables.
     """
-    env_vars = {key[len(PYTHON_CONFIG_ENV_PREFIX):].lower(): value
+    env_vars = {key[len(PYTHON_CONFIG_ENV_PREFIX):].lower().replace('_', '.'): value
                 for key, value in os.environ.items() if key.lower().startswith(PYTHON_CONFIG_ENV_PREFIX)}
     for key in env_vars.keys():
         evaluated = try_convert_string(env_vars[key])

@@ -16,11 +16,11 @@ def setup_and_teardown():
 
 
 @pytest.mark.parametrize("key,expected", [
-    ('simple_string', 'simpleString'),
-    ('simple_number', 123),
-    ('simple_bool_lower', True),
-    ('simple_bool_upper', True),
-    ('simple_bool_false', False),
+    ('string', 'simpleString'),
+    ('number', 123),
+    ('bool1', True),
+    ('bool2', True),
+    ('bool3', False),
     ('simple_nonexistent_key', None)
 ])
 def test_root_value(key, expected):
@@ -29,15 +29,15 @@ def test_root_value(key, expected):
 
 
 @pytest.mark.parametrize("key,value,expected", [
-    ('simple_string', 'simpleString', 'simpleString'),
-    ('simple_number', '123', 123),
-    ('simple_bool_lower', 'true', True),
-    ('simple_bool_upper', 'True', True),
-    ('simple_bool_false', 'false', False),
-    ('simple_empty_key', '', '')
+    ('string', 'simpleString', 'simpleString'),
+    ('number', '123', 123),
+    ('bool1', 'true', True),
+    ('bool2', 'True', True),
+    ('bool3', 'false', False),
+    ('empty', '', '')
 ])
 def test_root_value_from_env(key, value, expected):
-    os.environ[f'python_yaml_config.{key}'] = value
+    os.environ[f'python_yaml_config_{key}'] = value
 
     config = get_config_from_file_and_env('empty.yaml')
 
@@ -51,8 +51,8 @@ def test_nested_value():
 
 
 def test_nested_value_from_env():
-    os.environ['python_yaml_config.nested.value'] = 'nestedValue'
-    os.environ['python_yaml_config.such.much.nested.value'] = 'suchMuchNestedValue'
+    os.environ['python_yaml_config_nested_value'] = 'nestedValue'
+    os.environ['python_yaml_config_such_much_nested_value'] = 'suchMuchNestedValue'
 
     config = get_config_from_file_and_env('empty.yaml')
 

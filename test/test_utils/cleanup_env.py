@@ -1,7 +1,5 @@
 import os
 
-import pytest
-
 from python_yaml_config.app_config import PYTHON_CONFIG_ENV_PREFIX
 
 prefix = PYTHON_CONFIG_ENV_PREFIX

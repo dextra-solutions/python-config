@@ -1,8 +1,8 @@
-simple_string: simpleString
-simple_number: 123
-simple_bool_lower: true
-simple_bool_upper: True
-simple_bool_false: false
+string: simpleString
+number: 123
+bool1: true
+bool2: True
+bool3: false
 
 nested:
   value: nestedValue

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-yaml-config"
-version = "0.1.1"
+version = "1.0.0"
 description = "Spring-like python app configuration utility"
 authors = ["Roland Molnar <roland@dextra.dev>"]
 license = "MIT"
